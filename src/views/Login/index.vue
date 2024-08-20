@@ -1,9 +1,9 @@
-<script setup></script>
+<script setup>
+import Layout from '@/components/Layout.vue'
+</script>
 
 <template>
-  <div>
-    Login
-  </div>
+  <layout></layout>
 </template>
 
 <style scoped>
