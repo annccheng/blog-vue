@@ -1,10 +1,11 @@
-<script setup></script>
+<script setup>
+import Layout from '@/components/Layout.vue';
+</script>
 
 <template>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-  <a-button>Add</a-button>
+  <layout>
+    <router-view/>
+  </layout>
 </template>
 
 <style scoped></style>
