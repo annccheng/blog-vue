@@ -44,6 +44,11 @@ const router = createRouter({
       component: () => import('@/views/EditPost/index.vue')
     },
     {
+      path: '/house/:id',
+      name: 'house',
+      component: () => import('@/views/House/index.vue')
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: 'notFound',
       component: () => import('@/views/NotFound/index.vue'),

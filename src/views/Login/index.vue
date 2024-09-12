@@ -1,6 +1,6 @@
 <script setup>
 import Layout from '@/components/Layout.vue'
-import { reactive onMounted } from 'vue'
+import { reactive, onMounted } from 'vue'
 import { userApi } from "@/api/user"
 import { useRouter } from 'vue-router'
 import { message } from 'ant-design-vue';
@@ -10,11 +10,6 @@ const formData = reactive({
   username: '',
   password: ''
 })
-
-const router = useRouter()
-const goToHome = () => {
-  router.push('/')
-}
 
 const router = useRouter()
 const goToHome = () => {
@@ -47,7 +42,7 @@ onMounted(() => {
 
 <template>
   <layout>
-    <form @submit="login" flex flex-col items-center my-[300px] w-[400px] mx-auto">
+    <form @submit="login" class="flex flex-col items-center my-[300px] w-[400px] mx-auto">
     <div class="flex mb-4">
       <label class="w-[100px] block text-left mr-2" for="username">使用者名稱</label>
       <input type="text" v-model="formData.username" id="username"
