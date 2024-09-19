@@ -4,7 +4,7 @@ import { defineProps } from 'vue'
 defineProps({
   image: {
     type: String
-  }, 
+  },
   title: {
     type: String
   },
@@ -37,7 +37,7 @@ defineProps({
 </script>
 
 <template>
-  <div>
+  <div class="flex">
     <img class="w-[200px] h-[200px] object-cover rounded-3xl mr-3" :src="image" alt="">
     <div class="flex-1 flex flex-col justify-between">
       <div class="flex justify-between items-center mb-2">

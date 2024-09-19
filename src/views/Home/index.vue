@@ -37,7 +37,7 @@ const houseData = [
 
 const cities = ['台北', '新竹', '台中', '桃園', '雲林', '彰化', '高雄', '花蓮', '屏東']
 
-const describePage = [
+const describeData = [
   {
     image: 'https://img2.591.com.tw/house/2024/09/06/172563718632442802.jpg!400x300.jpg',
     title: '高樓有景兩房',
@@ -126,8 +126,16 @@ const describePage = [
           </div>
         </div>
         <div class="flex border-b border-solid border-primaryGray pb-9 mb-9">
-          <div v-for="(item, idx) in describePage" :key="idx">
-            <describe-page :img="item.image" :title="item.title" :pointOne="item.pointOne" :pointTwo="item.pointTwo" :pointThree="item.pointThree" :pointFour="item.pointFour" :slogan="item.slogan" :city="item.city" :owner="item.owner" :price="item.price" />
+          <div v-for="(item, idx) in describeData" :key="idx">
+            <describe-page
+              :image="item.image"
+              :title="item.title" 
+              :pointOne="item.pointOne" 
+              :pointTwo="item.pointTwo"
+              :pointThree="item.pointThree"
+              :pointFour="item.pointFour"
+              :slogan="item.slogan"
+              :city="item.city" :owner="item.owner" :price="item.price" />
           </div>
         </div>
       </section>
