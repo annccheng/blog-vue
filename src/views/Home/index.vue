@@ -4,6 +4,7 @@ import { ref } from 'vue'
 import HotCard from '@/components/HotCard.vue'
 import DescribePage from '@/components/describePage.vue';
 
+
 const houseData = [
   {
     image: 'https://img2.591.com.tw/house/2024/08/02/172259070595347108.jpg!400x300.jpg',
@@ -110,7 +111,12 @@ const describeData = [
         <h1 class="font-bold text-xl mb-2">熱門物件</h1>
         <div class="flex flex-wrap -mx-2 mb-5">
           <div v-for="(item, idx) in houseData" :key="idx" class="lg:w-1/4 md:w-1/2 w-full px-2 lg:mb-0 mb-3">
-            <hot-card :image="item.image" :city="item.city" :rate="item.rate" :owner="item.owner" :price="item.price" />
+            <hot-card
+            :image="item.image"
+            :city="item.city"
+            :rate="item.rate"
+            :owner="item.owner"
+            :price="item.price" />
           </div>
         </div>
       </section>
@@ -125,22 +131,24 @@ const describeData = [
             </div>
           </div>
         </div>
-        <div class="flex border-b border-solid border-primaryGray pb-9 mb-9">
-          <div v-for="(item, idx) in describeData" :key="idx">
+        <div class="flex flex-col border-b border-solid border-primaryGray pb-9 mb-9">
+          <div v-for="(item, idx) in describeData" :key="idx" class="mb-5 last:mb-0">
             <describe-page
               :image="item.image"
-              :title="item.title" 
-              :pointOne="item.pointOne" 
+              :title="item.title"
+              :pointOne="item.pointOne"
               :pointTwo="item.pointTwo"
               :pointThree="item.pointThree"
               :pointFour="item.pointFour"
               :slogan="item.slogan"
-              :city="item.city" :owner="item.owner" :price="item.price" />
+              :city="item.city"
+              :owner="item.owner"
+              :price="item.price" />
           </div>
         </div>
       </section>
     </main>
-    <nav class="bg-yellow-200 w-[180px] border border-solid border-pink md:block hidden">
+    <nav class="w-[180px] border border-solid border-pink md:block hidden">
       <h1 class="font-bold text-xl mb-2">搶手物件</h1>
       <div class="overflow-hidden rounded-lg shadow-md">
         <img class="w-full h-[180px] object-cover" src="@/assets/image/pic 4.jpg" alt="">

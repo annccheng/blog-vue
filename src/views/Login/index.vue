@@ -15,7 +15,7 @@ const router = useRouter()
 const goToHome = () => {
   router.push('/')
 }
-const token = ref(getToken()) 
+const token = ref(getToken())
 
 
 const submit = async(e) => {

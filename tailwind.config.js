@@ -9,6 +9,7 @@ export default {
     colors: {
       themeColor: "#F05A7E",
       primaryGray: "#aaaaaa",
+      white: "#fff"
     }
   },
   plugins: [],
