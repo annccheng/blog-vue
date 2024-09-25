@@ -19,14 +19,14 @@ const router = createRouter({
       component: () => import('@/views/Login/index.vue')
     },
     {
-      path: '/post/:id',
-      name: 'post',
-      component: () => import('@/views/Post/index.vue')
+      path: '/order',
+      name: 'order',
+      component: () => import('@/views/Order/index.vue')
     },
     {
-      path: '/collect',
-      name: 'collect',
-      component: () => import('@/views/Collect/index.vue')
+      path: '/orderList',
+      name: 'order-list',
+      component: () => import('@/views/OrderList/index.vue')
     },
     {
       path: '/search',
