@@ -1,0 +1,30 @@
+[
+  {
+    "image": "https://img2.591.com.tw/house/2024/08/02/172259070595347108.jpg!400x300.jpg",
+    "city": "台灣台北",
+    "rate": 4,
+    "owner": "Day",
+    "price": 6838
+  },
+  {
+    "image": "https://img2.591.com.tw/house/2024/08/24/172446989621201803.jpg!400x300.jpg",
+    "city": "台灣台中",
+    "rate": 4.6,
+    "owner": "Jenny",
+    "price": 7389
+  },
+  {
+    "image": "https://img2.591.com.tw/house/2024/09/12/172613199508395401.jpg!400x300.jpg",
+    "city": "台灣桃園",
+    "rate": 4.9,
+    "owner": "Amy",
+    "price": 7581
+  },
+  {
+    "image": "https://img2.591.com.tw/house/2024/08/24/172449873065961401.jpg!400x300.jpg",
+    "city": "台灣新竹",
+    "rate": 4,
+    "owner": "Molly",
+    "price": 8964
+  }
+]
