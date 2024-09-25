@@ -5,8 +5,8 @@ import HotCard from '@/components/HotCard.vue'
 import DescribePage from '@/components/describePage.vue';
 import { homeApi } from '@/api/home.js'
 
-const houses = ref({})
-const hotHouses = ref({})
+const houses = ref([])
+const hotHouses = ref([])
 
 const getHouses = async() => {
   const { data } = await homeApi.getHouses()
@@ -34,7 +34,9 @@ onMounted(() => {
         <h1 class="font-bold text-xl py-2">熱門物件</h1>
         <div class="flex flex-wrap -mx-2 mb-5">
           <div v-for="(item, idx) in hotHouses" :key="idx" class="lg:w-1/4 md:w-1/2 w-full px-2 lg:mb-0 mb-3">
-            <hot-card :image="item.image" :city="item.city" :rate="item.rate" :owner="item.owner" :price="item.price" />
+            <hot-card :image="item.image"
+            :city="item.city" :rate="item.rate"
+            :owner="item.owner" :price="item.price" />
           </div>
         </div>
       </section>
