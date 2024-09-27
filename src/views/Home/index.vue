@@ -11,6 +11,7 @@ const hotHouses = ref([])
 const getHouses = async() => {
   const { data } = await homeApi.getHouses()
   houses.value = data
+  console.log(data)
 }
 
 const getHotHouses = async () =>{
