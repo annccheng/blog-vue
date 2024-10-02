@@ -1,12 +1,11 @@
 <script setup>
-import Layout from '@/components/Layout.vue';
-import { reactive, onMounted } from 'vue';
-import { userApi } from "@/api/user";
-import { useRouter } from 'vue-router';
-import { message } from 'ant-design-vue';
-import { setToken, getToken } from '@/utils/localStorage';
-import { useI18n } from 'vue-i18n';
-import { userApi } from "@/api/user"；
+import Layout from '@/components/Layout.vue'
+import { reactive, onMounted } from 'vue'
+import { userApi } from "@/api/user"
+import { useRouter } from 'vue-router'
+import { message } from 'ant-design-vue'
+import { setToken, getToken } from '@/utils/localStorage'
+import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 

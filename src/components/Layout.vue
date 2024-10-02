@@ -55,7 +55,7 @@ const changePage = (url) => (
         <a href="#">{{ t('luxuryVilla') }}</a>
       </li>
       <li class="px-5 py-4">
-        <a href="#">{{ t('duplex house') }}</a>
+        <a href="#">{{ t('duplexHouse') }}</a>
       </li>
       <li class="px-5 py-4">
         <a href="#">{{ t('room') }}</a>
