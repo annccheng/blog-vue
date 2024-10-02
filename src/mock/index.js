@@ -1,4 +1,4 @@
-import Mock from "mock.js";
+import Mock from "mockjs";
 import houses from "./data/houses.json";
 import hotHouses from "./data/hotHouses.json";
 

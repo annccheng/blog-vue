@@ -11,7 +11,10 @@
   "dependencies": {
     "ant-design-vue": "^4.2.3",
     "axios": "^1.7.7",
+    "mock": "^0.1.1",
+    "mockjs": "^1.1.0",
     "vue": "^3.4.31",
+    "vue-i18n": "^9.14.1",
     "vue-router": "^4.4.3"
   },
   "devDependencies": {

@@ -1,6 +1,20 @@
 <script setup>
 import Logo from '@/assets/image/logo.jpg'
 import { useRouter, useRoute } from 'vue-router';
+import { useI18n } from 'vue-i18n'
+import { setLanguage } from "@/utils/localStorage";
+
+const { t, locale } = useI18n()
+
+const languageList = {
+  zh: 'zh_TW',
+  en: 'en_US'
+}
+const changeLanguage = () => {
+  const newLanguage = locale.value === languageList.zh ? languageList.en : languageList.zh
+  setLanguage(newLanguage)
+  locale.value = newLanguage
+}
 
 const router = useRouter()
 const changePage = (url) => (
@@ -18,7 +32,7 @@ const changePage = (url) => (
           <span class="font-roboto">Rent me</span>
         </h1>
         <ul class="flex text-xl">
-          <li>
+          <li @click="changeLanguage">
             <i class="fa-solid fa-globe mr-4"></i>
           </li>
           <li>
@@ -32,19 +46,19 @@ const changePage = (url) => (
     </header>
     <ul class="flex justify-center sticky top-0  bg-white shadow">
       <li class="px-5 py-4">
-        <a href="#">整層住家</a>
+        <a href="#">{{ t('fullFloor') }}</a>
       </li>
       <li class="px-5 py-4">
-        <a href="#">精緻套房</a>
+        <a href="#">{{ t('deluxeSuite') }}</a>
       </li>
       <li class="px-5 py-4">
-        <a href="#">豪華別墅</a>
+        <a href="#">{{ t('luxuryVilla') }}</a>
       </li>
       <li class="px-5 py-4">
-        <a href="#">樓中樓</a>
+        <a href="#">{{ t('duplex house') }}</a>
       </li>
       <li class="px-5 py-4">
-        <a href="#">絕美雅房</a>
+        <a href="#">{{ t('room') }}</a>
       </li>
     </ul>
     <div class="container mx-auto flex-1">
