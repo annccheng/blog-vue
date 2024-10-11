@@ -1,6 +1,6 @@
 <script setup>
 import Logo from '@/assets/image/logo.jpg'
-import { useRouter, useRoute } from 'vue-router';
+import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n'
 import { setLanguage } from "@/utils/localStorage";
 
@@ -38,8 +38,8 @@ const changePage = (url) => (
           <li>
             <i class="fa-regular fa-moon mr-4"></i>
           </li>
-          <li>
-            <i class="fa-solid fa-user"></i>
+          <li @click="changePage('/login')">
+            <i class="fa-solid fa-user cursor-pointer"></i>
           </li>
         </ul>
       </div>

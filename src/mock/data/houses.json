@@ -1,10 +1,9 @@
 [
   {
       "id": 1,
-      "image": "https://img2.591.com.tw/house/2024/09/06/172563718632442802.jpg!400x300.jpg",
+      "images": ["https://img2.591.com.tw/house/2024/09/06/172563718632442802.jpg!400x300.jpg","https://img1.591.com.tw/house/2024/09/06/172560315325430502.jpg!400x300.jpg","https://img1.591.com.tw/house/2024/06/30/171974166578496302.jpg!400x300.jpg","https://img1.591.com.tw/house/2024/09/10/172595498207813003.jpg!400x300.jpg"],
       "title": "高樓有景兩房",
       "feature": ["裝潢設計佳", "近捷運", "光線充足", "家具品質優"],
-      "slogan": "公園綠地",
       "city": "台灣新北",
       "owner": "Ginny",
       "price": 8547,
@@ -30,14 +29,14 @@
           "rate": 5,
           "comment": "住宿位置相當便利，靠近市區，步行可達多個景點和餐飲場所，交通也非常方便。即使沒有車，也能輕鬆探索周邊環境。酒店服務人員態度親切，入住和退房手續都處理得非常迅速且專業，特別是在提供旅遊建議和協助時，表現出色。"
         }
-      ]
+      ],
+      "map":["https://maps.app.goo.gl/bsUVFEVvL4cSUu3F7"]
   },
   {
       "id": 2,
-      "image": "https://img1.591.com.tw/house/2024/09/06/172560315325430502.jpg!400x300.jpg",
+      "images": ["https://img1.591.com.tw/house/2024/10/03/172791818922890404.jpg!1000x.water2.jpg","https://img2.591.com.tw/house/2024/09/06/172563718632442802.jpg!400x300.jpg","https://img1.591.com.tw/house/2024/06/30/171974166578496302.jpg!400x300.jpg","https://img1.591.com.tw/house/2024/09/10/172595498207813003.jpg!400x300.jpg"],
       "title": "精品兩房小豪宅",
       "feature": ["附近有便利商店", "社區非常安靜","廚房設備齊全", "陽台風景絕佳"],
-      "slogan": "豪華小宅",
       "city": "台灣桃園",
       "owner": "Sally",
       "price": 7658,
@@ -63,15 +62,14 @@
           "rate": 5,
           "comment": "住宿位置相當便利，靠近市區，步行可達多個景點和餐飲場所，交通也非常方便。即使沒有車，也能輕鬆探索周邊環境。酒店服務人員態度親切，入住和退房手續都處理得非常迅速且專業，特別是在提供旅遊建議和協助時，表現出色。"
         }
-      ]
-
+      ],
+    "map":["https://maps.app.goo.gl/6r967AC7MQkQfkZw7"]
   },
   {
       "id": 3,
-      "image": "https://img1.591.com.tw/house/2024/06/30/171974166578496302.jpg!400x300.jpg",
+      "images": ["https://img1.591.com.tw/house/2024/10/08/172832840338627100.jpg!1000x.water2.jpg","https://img1.591.com.tw/house/2024/09/06/172560315325430502.jpg!400x300.jpg","https://img1.591.com.tw/house/2024/06/30/171974166578496302.jpg!400x300.jpg","https://img1.591.com.tw/house/2024/09/10/172595498207813003.jpg!400x300.jpg"],
       "title": "邊間鋼骨電梯四房",
       "feature": ["隔音效果很好","儲物空間充足","通風佳","房屋結構堅固"],
-      "slogan": "歐風建築",
       "city": "台灣宜蘭",
       "owner": "Anna",
       "price": 9687,
@@ -97,14 +95,14 @@
           "rate": 5,
           "comment": "住宿位置相當便利，靠近市區，步行可達多個景點和餐飲場所，交通也非常方便。即使沒有車，也能輕鬆探索周邊環境。酒店服務人員態度親切，入住和退房手續都處理得非常迅速且專業，特別是在提供旅遊建議和協助時，表現出色。"
         }
-      ]
+      ],
+      "map":["https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3614.3603709992462!2d121.6115845753771!3d25.0557720778023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDAzJzIwLjgiTiAxMjHCsDM2JzUxLjAiRQ!5e0!3m2!1szh-TW!2stw!4v1726770186723!5m2!1szh-TW!2stw"]
   },
   {
       "id": 4,
-      "image": "https://img1.591.com.tw/house/2024/09/10/172595498207813003.jpg!400x300.jpg",
+      "images": ["https://img1.591.com.tw/house/2024/08/03/172268639906343006.jpg!1000x.water2.jpg","https://img1.591.com.tw/house/2024/09/06/172560315325430502.jpg!400x300.jpg","https://img1.591.com.tw/house/2024/06/30/171974166578496302.jpg!400x300.jpg","https://img1.591.com.tw/house/2024/09/10/172595498207813003.jpg!400x300.jpg"],
       "title": "日系質感露臺2房車",
       "feature": ["通風佳","價格合理","安全措施完善","水壓和熱水供應穩定"],
-      "slogan": "採光佳",
       "city": "台灣高雄",
       "owner": "Jason",
       "price": 8154,
@@ -130,14 +128,14 @@
           "rate": 5,
           "comment": "住宿位置相當便利，靠近市區，步行可達多個景點和餐飲場所，交通也非常方便。即使沒有車，也能輕鬆探索周邊環境。酒店服務人員態度親切，入住和退房手續都處理得非常迅速且專業，特別是在提供旅遊建議和協助時，表現出色。"
         }
-      ]
+      ],
+      "map":["https//www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d7227.046030289843!2d121.524003!3d25.084151!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDA1JzAyLjkiTiAxMjHCsDMxJzI2LjQiRQ!5e0!3m2!1szh-TW!2sus!4v1728596654912!5m2!1szh-TW!2sus"]
   },
   {
       "id": 5,
-      "image": "https://img1.591.com.tw/house/2024/09/04/172541290653272908.jpg!400x300.jpg",
+      "images": ["https://img2.591.com.tw/house/2024/10/02/172779852945391502.jpg!1000x.water2.jpg","https://img1.591.com.tw/house/2024/09/06/172560315325430502.jpg!400x300.jpg","https://img1.591.com.tw/house/2024/06/30/171974166578496302.jpg!400x300.jpg","https://img1.591.com.tw/house/2024/09/10/172595498207813003.jpg!400x300.jpg"],
       "title": "陽光101景觀邸",
       "feature": ["公共設施完備","儲物空間充裕","附近有公園","學區非常好"],
-      "slogan": "交通便利",
       "city": "台灣台北",
       "owner": "Yvonne",
       "price": 7852,
@@ -163,6 +161,7 @@
           "rate": 5,
           "comment": "住宿位置相當便利，靠近市區，步行可達多個景點和餐飲場所，交通也非常方便。即使沒有車，也能輕鬆探索周邊環境。酒店服務人員態度親切，入住和退房手續都處理得非常迅速且專業，特別是在提供旅遊建議和協助時，表現出色。"
         }
-      ]
+      ],
+      "map":["https://maps.app.goo.gl/y8sX31pFFf1LqCEx5"]
   }
 ]

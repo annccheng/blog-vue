@@ -1,5 +1,5 @@
 {
-  "fullFloor": "Full floor",
+  "fullFloor": "Full Floor",
   "username": "Username",
   "login": "Login",
   "username_placeholder": "Please enter valid username",
@@ -7,5 +7,7 @@
   "deluxeSuite":"Deluxe Suite",
   "luxuryVilla":"Luxury Villa",
   "duplexHouse":"Duplex House",
-  "room":"Room"
+  "room":"Room",
+  "login_success": "Login successfully",
+  "login_fail": "Username or password have invalid value"
 }

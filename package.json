@@ -13,6 +13,8 @@
     "axios": "^1.7.7",
     "mock": "^0.1.1",
     "mockjs": "^1.1.0",
+    "pinia": "^2.2.4",
+    "pinia-plugin-persistedstate": "^4.1.1",
     "vue": "^3.4.31",
     "vue-i18n": "^9.14.1",
     "vue-router": "^4.4.3"

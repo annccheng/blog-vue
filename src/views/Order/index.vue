@@ -1,36 +1,54 @@
-<script setup></script>
+<script setup>
+
+</script>
 
 <template>
-  <div class="border border-solid border-primaryGray mt-6 text-lg item-center p-3 rounded-md h-[230px] mb-2">
-    <h3 class="font-bold">訂單資料</h3>
-    <hr class="text-primaryGray">
-    <div class="flex flex-col mt-3">
-      <label for="date">日期</label>
-      <input id="date" type="text" class="border-primaryGray border border-solid rounded-md p-2 focus:outline-none">
+  <div class="flex">
+    <div class="w-1/3  overflow-hidden shadow-lg mt-6 text-lg item-center rounded-md h-[330px] mb-2">
+      <img class="w-full h-[180px] object-cover" src="@/assets/image/pic 2.jpg" alt="">
+      <div class="p-1">
+          <div class="flex justify-between items-center">
+            <h3 class="font-bold">台灣南投</h3>
+            <div class="flex items-center">
+              <i class="fa-solid fa-star"></i>
+              <span class="ml-1">5.0</span>
+            </div>
+          </div>
+          <p class="text-primaryGray">房東：Winter</p>
+          <span class="mt-3">$8.500 TWD晚</span>
+      </div>
     </div>
-    <div class="flex mt-3">
-      <p class="mr-3">金額/晚</p>
-      <span>$5476</span>
+    <div class="w-1/3 border border-solid border-primaryGray mt-6 text-lg item-center p-3 rounded-md h-[330px] mb-2">
+      <h3 class="font-bold">訂單資料</h3>
+      <hr class="text-primaryGray">
+      <div class="flex flex-col mt-3">
+        <label for="date">日期</label>
+        <input id="date" type="text" class="border-primaryGray border border-solid rounded-md p-2 focus:outline-none">
+      </div>
+      <div class="flex mt-3">
+        <p class="mr-3">金額/晚</p>
+        <span>$5476</span>
+      </div>
+      <div class="flex mt-3">
+        <p class="mr-3">總價</p>
+        <span>$10952</span>
+      </div>
     </div>
-    <div class="flex mt-3">
-      <p class="mr-3">總價</p>
-      <span>$10952</span>
-    </div>
-  </div>
-  <div class="border border-solid border-primaryGray mt-6 text-lg item-center p-3 rounded-md h-[330px] mb-2">
-    <h3 class="font-bold">訂購人資訊</h3>
-    <hr class="text-primaryGray">
-    <div class="flex flex-col mt-3">
-      <label for="date">手機</label>
-      <input id="date" type="text" class="border-primaryGray border border-solid rounded-md p-2 focus:outline-none">
-    </div>
-    <div class="flex flex-col mt-3">
-      <label for="date">Email</label>
-      <input id="date" type="text" class="border-primaryGray border border-solid rounded-md p-2 focus:outline-none">
-    </div>
-    <div class="flex flex-col mt-3">
-      <label for="date">支款方式</label>
-      <input id="date" type="text" class="border-primaryGray border border-solid rounded-md p-2 focus:outline-none">
+    <div class="w-1/3 border border-solid border-primaryGray mt-6 text-lg item-center p-3 rounded-md h-[330px] mb-2">
+      <h3 class="font-bold">訂購人資訊</h3>
+      <hr class="text-primaryGray">
+      <div class="flex flex-col mt-3">
+        <label for="date">手機</label>
+        <input id="date" type="text" class="border-primaryGray border border-solid rounded-md p-2 focus:outline-none">
+      </div>
+      <div class="flex flex-col mt-3">
+        <label for="date">Email</label>
+        <input id="date" type="text" class="border-primaryGray border border-solid rounded-md p-2 focus:outline-none">
+      </div>
+      <div class="flex flex-col mt-3">
+        <label for="date">支款方式</label>
+        <input id="date" type="text" class="border-primaryGray border border-solid rounded-md p-2 focus:outline-none">
+      </div>
     </div>
   </div>
   <button class="bg-themeColor px-3 py-3 rounded-lg w-full text-[#fff] mt-5">結帳</button>

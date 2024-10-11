@@ -3,27 +3,23 @@ import Layout from '@/components/Layout.vue'
 import { ref, onMounted } from 'vue'
 import HotCard from '@/components/HotCard.vue'
 import DescribePage from '@/components/describePage.vue';
-import { homeApi } from '@/api/home.js'
+import { useRouter } from 'vue-router'
+import { useHouseStore } from '@/store/house.js'
 
-const houses = ref([])
-const hotHouses = ref([])
+const houseStore = useHouseStore()
 
-const getHouses = async() => {
-  const { data } = await homeApi.getHouses()
-  houses.value = data
-  console.log(data)
-}
+const houses = ref(houseStore.houses)
+const hotHouses = ref(houseStore.hotHouses)
+const router = useRouter()
 
-const getHotHouses = async () =>{
-  const { data } = await homeApi.getHotHouses()
-  hotHouses.value = data
-}
 
 const cities = ['台北', '新竹', '台中', '桃園', '雲林', '彰化', '高雄', '花蓮', '屏東']
-onMounted(() => {
-  getHouses()
-  getHotHouses()
-})
+
+const goToHouse = (id, category) => {
+  const categoryQuery = category ? `?category=${category}` : ''
+  router.push(`/house/${id}${categoryQuery}`)
+}
+
 </script>
 
 
@@ -35,9 +31,10 @@ onMounted(() => {
         <h1 class="font-bold text-xl py-2">熱門物件</h1>
         <div class="flex flex-wrap -mx-2 mb-5">
           <div v-for="(item, idx) in hotHouses" :key="idx" class="lg:w-1/4 md:w-1/2 w-full px-2 lg:mb-0 mb-3">
-            <hot-card :image="item.image"
+            <hot-card :image="item.images[0]"
             :city="item.city" :rate="item.rate"
-            :owner="item.owner" :price="item.price" />
+            :owner="item.owner" :price="item.price"
+            @click="goToHouse(item.id, 'hot')"/>
           </div>
         </div>
       </section>
@@ -54,10 +51,11 @@ onMounted(() => {
         </div>
         <div class="flex flex-col mb-9">
           <div v-for="(item, idx) in houses" :key="idx" class="mb-5 last:mb-0">
-            <describe-page :image="item.image" :title="item.title"
+            <describe-page :image="item.images[0]" :title="item.title"
             :feature="item.feature"
             :slogan="item.slogan" :city="item.city"
-              :owner="item.owner" :price="item.price" />
+            :owner="item.owner" :price="item.price"
+            @click="goToHouse(item.id)" />
           </div>
         </div>
       </section>
@@ -66,7 +64,7 @@ onMounted(() => {
       <div>
         <h1 class="font-bold text-xl py-2">搶手物件</h1>
         <div class="overflow-hidden rounded-lg shadow-md mb-3">
-          <img class="w-full h-[180px] object-cover" src="@/assets/image/pic 4.jpg" alt="">
+          <img class="w-full h-[180px] object-cover" src="@/assets/image/pic 2.jpg" alt="">
           <div class="p-1">
             <div class="flex justify-between items-center">
               <h3 class="font-bold">台灣南投</h3>
@@ -76,14 +74,14 @@ onMounted(() => {
               </div>
             </div>
             <p class="text-primaryGray">房東：Winter</p>
-            <span>$10.000 TWD晚</span>
+            <span>$8.500 TWD晚</span>
           </div>
         </div>
         <div class="overflow-hidden rounded-lg shadow-md mb-3">
-          <img class="w-full h-[180px] object-cover" src="@/assets/image/pic 4.jpg" alt="">
+          <img class="w-full h-[180px] object-cover" src="@/assets/image/pic 1.jpg" alt="">
           <div class="p-1">
             <div class="flex justify-between items-center">
-              <h3 class="font-bold">台灣南投</h3>
+              <h3 class="font-bold">台灣高雄</h3>
               <div class="flex items-center">
                 <i class="fa-solid fa-star"></i>
                 <span class="ml-1">5.0</span>
@@ -94,17 +92,17 @@ onMounted(() => {
           </div>
         </div>
         <div class="overflow-hidden rounded-lg shadow-md">
-          <img class="w-full h-[180px] object-cover" src="@/assets/image/pic 4.jpg" alt="">
+          <img class="w-full h-[180px] object-cover" src="@/assets/image/pic 3.jpg" alt="">
           <div class="p-1">
             <div class="flex justify-between items-center">
-              <h3 class="font-bold">台灣南投</h3>
+              <h3 class="font-bold">台灣台南</h3>
               <div class="flex items-center">
                 <i class="fa-solid fa-star"></i>
                 <span class="ml-1">5.0</span>
               </div>
             </div>
             <p class="text-primaryGray">房東：Winter</p>
-            <span>$10.000 TWD晚</span>
+            <span>$9.700 TWD晚</span>
           </div>
         </div>
       </div>

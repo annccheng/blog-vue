@@ -7,5 +7,7 @@
   "deluxeSuite":"精緻套房",
   "luxuryVilla":"豪華別墅",
   "duplexHouse":"樓中樓",
-  "room":"絕美雅房"
+  "room":"絕美雅房",
+  "login_success": "登入成功",
+  "login_fail": "使用者名稱或密碼錯誤"
 }

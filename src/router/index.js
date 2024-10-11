@@ -24,9 +24,9 @@ const router = createRouter({
       component: () => import('@/views/Order/index.vue')
     },
     {
-      path: '/orderList',
-      name: 'order-list',
-      component: () => import('@/views/OrderList/index.vue')
+      path: '/receipt',
+      name: 'receipt',
+      component: () => import('@/views/Receipt/index.vue')
     },
     {
       path: '/search',
