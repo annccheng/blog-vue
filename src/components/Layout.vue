@@ -64,8 +64,5 @@ const changePage = (url) => (
     <div class="container mx-auto flex-1">
       <slot />
     </div>
-    <footer class="py-2 bg-[#eee]">
-      <p class="text-center">2024 My Website. All rights reserved.</p>
-    </footer>
   </div>
 </template>

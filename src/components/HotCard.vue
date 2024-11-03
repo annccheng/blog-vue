@@ -9,14 +9,14 @@ defineProps({
     type: String
   },
   rate: {
-    type: String,
-    default: '0.0'
+    type: Number,
+    default: 0
   },
   owner: {
     type: String
   },
   price: {
-    type: String
+    type: Number
   }
 })
 </script>
