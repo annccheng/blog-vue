@@ -3,8 +3,13 @@ import Logo from '@/assets/image/logo.jpg'
 import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n'
 import { setLanguage } from "@/utils/localStorage";
+import { useUserStore } from '@/store/user.js'
+import { computed } from 'vue'
+import { message } from 'ant-design-vue';
+
 
 const { t, locale } = useI18n()
+const userStore = useUserStore()
 
 const languageList = {
   zh: 'zh_TW',
@@ -20,6 +25,14 @@ const router = useRouter()
 const changePage = (url) => (
   router.push(url)
 )
+
+const userName = computed(() => userStore.userName)
+const token = computed(() => userStore.token)
+const logout = () => {
+  userStore.setToken('')
+  userStore.setUserName('')
+  message.success(t('logout_success'))
+}
 </script>
 
 
@@ -31,17 +44,33 @@ const changePage = (url) => (
           <i class="fa-solid fa-house text-xl mr-2"></i>
           <span class="font-roboto">Rent me</span>
         </h1>
-        <ul class="flex text-xl">
-          <li @click="changeLanguage">
-            <i class="fa-solid fa-globe mr-4"></i>
-          </li>
-          <li>
-            <i class="fa-regular fa-moon mr-4"></i>
-          </li>
-          <li @click="changePage('/login')">
-            <i class="fa-solid fa-user cursor-pointer"></i>
-          </li>
-        </ul>
+        <div class="flex">
+          <p v-if="token" class="mr-4">Hi, {{ userName }}</p>
+          <ul class="flex text-xl">
+            <li @click="changeLanguage">
+              <i class="fa-solid fa-globe mr-4"></i>
+            </li>
+            <li>
+              <i class="fa-regular fa-moon mr-4"></i>
+            </li>
+            <a-tooltip v-if="!token" placement="bottom">
+              <template #title>
+                <span>{{ t('login') }}</span>
+              </template>
+              <li @click="changePage('/login')">
+                <i class="fa-solid fa-user cursor-pointer"></i>
+              </li>
+            </a-tooltip>
+            <a-tooltip v-else placement="bottom">
+              <template #title>
+                <span>{{ t('logout') }}</span>
+              </template>
+              <li @click="logout">
+                <i class="fa-solid fa-right-to-bracket cursor-pointer"></i>
+              </li>
+            </a-tooltip>
+          </ul>
+        </div>
       </div>
     </header>
     <ul class="flex justify-center sticky top-0  bg-white shadow">

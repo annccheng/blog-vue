@@ -68,6 +68,7 @@ const goToHouse = (id, category) => {
   const categoryQuery = category ? `?category=${category}` : ''
   router.push(`/house/${id}${categoryQuery}`)
 }
+
 watch(houses, (newValue) => {
   filterHouses.value = newValue
 })
@@ -96,7 +97,7 @@ watch(houses, (newValue) => {
         <div v-if="filterHouses.length" class="flex flex-col">
           <div v-for="(item, idx) in filterHouses" :key="idx" class="mb-5 last:mb-0">
             <describe-page :image="item.images[0]" :title="item.title" :feature="item.feature" :slogan="item.slogan"
-              :city="item.city" :owner="item.owner" :price="item.price" @click="goToHouse(item.id)" />
+              :city="item.city" :owner="item.owner" :price="item.price" @change-page="goToHouse(item.id)" @add-to-favorite="houseStore.setFavorite(item.id)" :is-favorite="houseStore.favorite['house'].some(i => i.id == item.id)" />
           </div>
         </div>
         <div v-else>

@@ -27,12 +27,14 @@ const submit = async (e) => {
   try {
     const { data, code } = await userApi.login(formData.username, formData.password)
     if (code === 200) {
-      const { accessToken } = data
+      const { accessToken, firstName } = data
       userStore.setToken(accessToken)
+      userStore.setUserName(firstName)
       message.success(t('login_success'))
       goToHome()
     }
   } catch (err) {
+    console.log(err);
     message.error(t('login_fail'))
   }
 }

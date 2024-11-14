@@ -2,6 +2,7 @@
   "fullFloor": "Full Floor",
   "username": "Username",
   "login": "Login",
+  "logout": "Logout",
   "username_placeholder": "Please enter valid username",
   "password": "Password",
   "deluxeSuite":"Deluxe Suite",
@@ -9,5 +10,6 @@
   "duplexHouse":"Duplex House",
   "room":"Room",
   "login_success": "Login successfully",
+  "logout_success": "Logout successfully",
   "login_fail": "Username or password have invalid value"
 }
