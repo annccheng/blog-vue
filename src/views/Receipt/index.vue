@@ -1,26 +1,58 @@
 <script setup>
+import { computed, reactive } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import { useHouseStore } from '@/store/house.js'
 
+import { useUserStore } from "@/store/user.js";
+const houseStore = useHouseStore()
+const userStore = useUserStore()
+const route = useRoute()
+const router = useRouter()
+
+const payInfo = reactive({
+  rentDate,
+  checkoutDate,
+  people,
+  totalPrice: totalPrice.value,
+  payMethod: payMethods.value,
+  phone:'',
+  email:'',
+})
+
+const checkout = () => {
+
+  userStore.setOrders([
+    {
+      rentDate: payInfo.rentDate,
+      checkoutDate: payInfo.checkoutDate,
+      people: payInfo.people,
+      totalPrice: payInfo.totalPrice,
+      payMethod: payInfo.payMethod,
+      phone: payInfo.phone,
+      email: payInfo.email,
+    },
+    ...userStore.receipt
+  ])
+  }
 </script>
 
 <template>
   <div class="flex overflow-hidden shadow-lg mt-6 text-lg item-center rounded-md mb-8">
-    <img class="w-[550px] h-[180px] object-cover" src="@/assets/image/pic 2.jpg" alt="">
+    <img class="w-[550px] h-[180px] object-cover" :src="orderHouse.images[0]" alt="">
     <div class="pl-4">
       <div class="flex justify-between items-center">
-        <h3 class="font-bold">台灣南投</h3>
+        <h3 class="font-bold">{{ orderHouse.city }}</h3>
         <div class="flex items-center">
           <i class="fa-solid fa-star"></i>
           <span class="ml-1">5.0</span>
         </div>
       </div>
       <div class="mt-3">
-        <span class="bg-themeColor border-themeColor text-white rounded-sm mr-2">裝潢設計佳</span>
-        <span class="bg-themeColor border-themeColor text-white rounded-sm mr-2">光線充足</span>
-        <span class="bg-themeColor border-themeColor text-white rounded-sm mr-2">家具品質優</span>
-        <span class="bg-themeColor border-themeColor text-white rounded-sm">通風佳</span>
+        <span v-for="item in orderHouse.feature" :key="item"
+          class="bg-themeColor border-themeColor text-white rounded-sm mr-2">{{ item }}</span>
       </div>
-      <p class="text-primaryGray mt-3">房東：Winter</p>
-      <span class="mt-3">$8.500 TWD晚</span>
+      <p class="text-primaryGray mt-3">房東 {{ orderHouse.owner }}</p>
+      <span class="mt-3">${{ orderHouse.price }} TWD晚</span>
     </div>
   </div>
   <div class="flex -mx-2 mb-5">
@@ -29,16 +61,20 @@
         <h3 class="font-bold">訂單資料</h3>
         <hr class="text-primaryGray">
         <div class="flex flex-col mt-3">
-          <label for="date">日期</label>
-          <span>10月14日至10月16日</span>
+          <p>入住日期</p>
+          <p>{{ rentDate }}</p>
+          <p>退住日期</p>
+          <p>{{ checkoutDate }}</p>
+          <p>人數</p>
+          <p>{{ people }}</p>
         </div>
         <div class="flex mt-3">
-          <p class="mr-3">金額/晚</p>
-          <span>$5476</span>
+          <p class="mr-3">金額/晚(人)</p>
+          <span>${{ orderHouse.price }}</span>
         </div>
         <div class="flex mt-3">
           <p class="mr-3">總價</p>
-          <span>$10952</span>
+          <span>${{ totalPrice }}</span>
         </div>
       </div>
     </div>
@@ -48,15 +84,15 @@
         <hr class="text-primaryGray">
         <div class="flex flex-col mt-3">
           <label for="date">手機</label>
-          <span>0975265789</span>
+          <span>{{ orderHouse.phone }}</span>
         </div>
         <div class="flex flex-col mt-3">
           <label for="date">Email</label>
-          <span>123abc@gmail.com</span>
+          <span>{{ orderHouse.email }}</span>
         </div>
         <div class="flex flex-col mt-3">
           <label for="date">支款方式</label>
-          <span>信用卡</span>
+          <span>{{ orderHouse.payMethod }}</span>
         </div>
       </div>
     </div>
