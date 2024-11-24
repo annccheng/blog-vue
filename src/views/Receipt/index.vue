@@ -1,43 +1,46 @@
 <script setup>
-import { computed, reactive } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import { useHouseStore } from '@/store/house.js'
+import { computed, reactive } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import { useHouseStore } from '@/store/house.js';
+import { useUserStore } from '@/store/user.js';
 
-import { useUserStore } from "@/store/user.js";
-const houseStore = useHouseStore()
-const userStore = useUserStore()
-const route = useRoute()
-const router = useRouter()
+const houseStore = useHouseStore();
+const userStore = useUserStore();
+const route = useRoute();
+const router = useRouter();
+
 
 const payInfo = reactive({
-  rentDate,
-  checkoutDate,
-  people,
+  rentDate: rentDate.value,
+  checkoutDate: checkoutDate.value,
+  people: people.value,
   totalPrice: totalPrice.value,
   payMethod: payMethods.value,
-  phone:'',
-  email:'',
-})
+  phone: phone.value,
+  email: email.value,
+});
 
 const checkout = () => {
 
-  userStore.setOrders([
-    {
-      rentDate: payInfo.rentDate,
-      checkoutDate: payInfo.checkoutDate,
-      people: payInfo.people,
-      totalPrice: payInfo.totalPrice,
-      payMethod: payInfo.payMethod,
-      phone: payInfo.phone,
-      email: payInfo.email,
-    },
-    ...userStore.receipt
-  ])
-  }
+userStore.setReceipts([
+  {
+    rentDate: payInfo.rentDate,
+    checkoutDate: payInfo.checkoutDate,
+    people: payInfo.people,
+    totalPrice: payInfo.totalPrice,
+    payMethod: payInfo.payMethod,
+    phone: payInfo.phone,
+    email: payInfo.email,
+    createdAt: Math.floor(Date.now() / 1000)
+  },
+  ...userStore.receipt
+])
+}
+
 </script>
 
 <template>
-  <div class="flex overflow-hidden shadow-lg mt-6 text-lg item-center rounded-md mb-8">
+    <div class="flex overflow-hidden shadow-lg mt-6 text-lg item-center rounded-md mb-8">
     <img class="w-[550px] h-[180px] object-cover" :src="orderHouse.images[0]" alt="">
     <div class="pl-4">
       <div class="flex justify-between items-center">
@@ -51,7 +54,7 @@ const checkout = () => {
         <span v-for="item in orderHouse.feature" :key="item"
           class="bg-themeColor border-themeColor text-white rounded-sm mr-2">{{ item }}</span>
       </div>
-      <p class="text-primaryGray mt-3">房東 {{ orderHouse.owner }}</p>
+      <p class="text-primaryGray mt-3">房東：Winter</p>
       <span class="mt-3">${{ orderHouse.price }} TWD晚</span>
     </div>
   </div>
@@ -83,16 +86,20 @@ const checkout = () => {
         <h3 class="font-bold">訂購人資訊</h3>
         <hr class="text-primaryGray">
         <div class="flex flex-col mt-3">
-          <label for="date">手機</label>
-          <span>{{ orderHouse.phone }}</span>
+          <p>手機</p>
+          <p>{{}}</p>
         </div>
         <div class="flex flex-col mt-3">
           <label for="date">Email</label>
-          <span>{{ orderHouse.email }}</span>
+          <input v-model="payInfo.email" type="email"
+            class="border-primaryGray border border-solid rounded-md p-2 focus:outline-none" required>
         </div>
         <div class="flex flex-col mt-3">
           <label for="date">支款方式</label>
-          <span>{{ orderHouse.payMethod }}</span>
+          <select class="border-primaryGray border border-solid rounded-md p-2 focus:outline-none"
+            v-model="payInfo.payMethod" name="" id="">
+            <option v-for="item in payMethods" :key="item" :value="item">{{ item }}</option>
+          </select>
         </div>
       </div>
     </div>
@@ -102,3 +109,4 @@ const checkout = () => {
 <style scoped>
 
 </style>
+
