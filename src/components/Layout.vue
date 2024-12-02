@@ -73,7 +73,7 @@ const logout = () => {
         </div>
       </div>
     </header>
-    <ul class="flex justify-center sticky top-0  bg-white shadow">
+    <ul class="flex justify-center sticky top-0  bg-white shadow  z-[100]">
       <li class="px-5 py-4">
         <a href="#">{{ t('fullFloor') }}</a>
       </li>

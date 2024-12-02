@@ -70,15 +70,15 @@ const confirm = () => {
           <button @click="confirm" class=" bg-themeColor px-3 py-3 rounded-lg w-full text-[#fff] mt-3">預定</button>
           <label  class="mt-3" for="">入住日期</label>
           <input v-model="houseInfo.rentDate"
-            class="border border-primaryGray border-solid w-full h-14 rounded-[16px] focus:outline-0 mt-3" type="date"
+            class="border border-primaryGray border-solid w-full h-14 rounded-[16px] focus:outline-0 mt-3 pl-2" type="date"
             placeholder="入住日期">
           <label class="mt-3" for="">退住日期</label>
           <input v-model="houseInfo.checkoutDate"
-            class="border border-primaryGray border-solid w-full h-14 rounded-[16px] focus:outline-0 mt-3" type="date"
+            class="border border-primaryGray border-solid w-full h-14 rounded-[16px] focus:outline-0 mt-3 pl-2" type="date"
             placeholder="退住日期">
           <label class="mt-3" for="">人數</label>
           <select v-model="houseInfo.people"
-            class="border border-primaryGray border-solid w-full h-14 rounded-[16px] focus:outline-0 mt-3" name=""
+            class="pl-2 border border-primaryGray border-solid w-full h-14 rounded-[16px] focus:outline-0 mt-3" name=""
             id="">
             <option v-for="item in 4" :key="item" :value="item">{{ item }}</option>
           </select>

@@ -4,6 +4,8 @@ import { useRoute, useRouter } from 'vue-router'
 import { useHouseStore } from '@/store/house.js'
 
 import { useUserStore } from "@/store/user.js";
+import { calculateDays } from '@/utils/time.js'
+
 const houseStore = useHouseStore()
 const userStore = useUserStore()
 const route = useRoute()
@@ -15,35 +17,38 @@ const orderHouse = computed(() => {
   }
   return houseStore.houses.find(item => item.id === Number(houseId))
 })
-const totalPrice = computed(() => orderHouse.value.price * people)
 
 const payMethods = ['Visa/Master信用卡', '銀行轉帳', 'linePay']
+
 const payInfo = reactive({
   rentDate,
   checkoutDate,
   people,
-  totalPrice: totalPrice.value,
   payMethod: payMethods[0],
   phone: '',
   email: '',
 })
 
-const checkout = () => {
+const totalPrice = computed(() => orderHouse.value.price * people * calculateDays(payInfo.rentDate, payInfo.checkoutDate))
 
-  userStore.setOrders([
-    {
+const checkout = () => {
+  const order = {
+      id: Math.floor(Date.now() / 1000),
       rentDate: payInfo.rentDate,
       checkoutDate: payInfo.checkoutDate,
       people: payInfo.people,
-      totalPrice: payInfo.totalPrice,
+      totalPrice: totalPrice.value,
       payMethod: payInfo.payMethod,
       phone: payInfo.phone,
       email: payInfo.email,
-      createdAt: Math.floor(Date.now() / 1000)
-    },
+      createdAt: Math.floor(Date.now() / 1000),
+      house: orderHouse.value
+    }
+  userStore.setOrders([
+    order,
     ...userStore.orders
   ])
-  router.push('/receipt')
+  router.push(`/receipt/${order.id}`)
 }
 </script>
 <template>
