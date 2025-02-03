@@ -66,7 +66,7 @@ const confirm = () => {
       </div>
       <div class="w-1/3">
         <div class="shadow-lg rounded-lg p-3">
-          <p class="font-bold text-2xl text-center">$4,007 TWD晚</p>
+          <p class="font-bold text-2xl text-center">$ {{ house.price }} TWD晚</p>
           <button @click="confirm" class=" bg-themeColor px-3 py-3 rounded-lg w-full text-[#fff] mt-3">預定</button>
           <label  class="mt-3" for="">入住日期</label>
           <input v-model="houseInfo.rentDate"

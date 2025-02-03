@@ -4,7 +4,7 @@ import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n'
 import { setLanguage } from "@/utils/localStorage";
 import { useUserStore } from '@/store/user.js'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { message } from 'ant-design-vue';
 
 
@@ -49,9 +49,6 @@ const logout = () => {
           <ul class="flex text-xl">
             <li @click="changeLanguage">
               <i class="fa-solid fa-globe mr-4"></i>
-            </li>
-            <li>
-              <i class="fa-regular fa-moon mr-4"></i>
             </li>
             <a-tooltip v-if="!token" placement="bottom">
               <template #title>
